@@ -1,0 +1,26 @@
+{
+    "name": "Morning Coffee",
+    "version": "0.0.1",
+    "manifest_version": 2,
+    "description": "Use your camera, to navigate into the opened tabs",
+    "icons": {
+        "16": "images/icon-16.png",
+        "128": "images/icon-128.png"
+    },
+    "default_locale": "en",
+    "background": {
+        "scripts": [
+            "scripts/background.js",
+            "scripts/gest.min.js"
+        ]
+    },
+    "permissions": [
+        "tabs",
+        "http://*/*",
+        "https://*/*"
+    ],
+    "page_action": {
+        "default_icon": "images/icon-38-disabled.png",
+        "default_title": "Morning Coffee"
+  }
+}
