@@ -32,6 +32,10 @@ chrome.pageAction.onClicked.addListener(function(tab) {
 
 	var iconState = state ? "" : "-disabled";
   chrome.pageAction.setIcon({path: 'images/icon-38' + iconState + '.png', tabId: tab.id});
+  console.log(chrome.extension.getURL("scripts/gest.js"));
 
-  chrome.tabs.executeScript(null, {file:"scripts/gest.min.js"});
+  chrome.tabs.executeScript(null, { 
+	  code: "document.body.appendChild(document.createElement('script')).src='" + 
+	    chrome.extension.getURL("scripts/app.js") +"';" 
+	}, null);
 });
